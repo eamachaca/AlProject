@@ -13,7 +13,7 @@ class CreateCarreersTable extends Migration
      */
     public function up()
     {
-        Schema::create('carreers', function (Blueprint $table) {
+        Schema::create('careers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('acronym');
@@ -22,7 +22,6 @@ class CreateCarreersTable extends Migration
             $table->string('welcome');
             $table->string('director');
             $table->unsignedInteger('portal_id');
-      
             $table->timestamps();
         });
     }

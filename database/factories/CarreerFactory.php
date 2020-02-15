@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Carreer;
+use App\Career;
 use Faker\Generator as Faker;
 
-$factory->define(Carreer::class, function (Faker $faker) {
+$factory->define(Career::class, function (Faker $faker) {
     return [
         //
     ];

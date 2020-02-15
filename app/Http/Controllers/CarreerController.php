@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Carreer;
+use App\Career;
 use Illuminate\Http\Request;
 
 class CarreerController extends Controller
@@ -41,10 +41,10 @@ class CarreerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Carreer  $carreer
+     * @param  \App\Career  $carreer
      * @return \Illuminate\Http\Response
      */
-    public function show(Carreer $carreer)
+    public function show(Career $carreer)
     {
         //
     }
@@ -52,10 +52,10 @@ class CarreerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Carreer  $carreer
+     * @param  \App\Career  $carreer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Carreer $carreer)
+    public function edit(Career $carreer)
     {
         //
     }
@@ -64,10 +64,10 @@ class CarreerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Carreer  $carreer
+     * @param  \App\Career  $carreer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Carreer $carreer)
+    public function update(Request $request, Career $carreer)
     {
         //
     }
@@ -75,10 +75,10 @@ class CarreerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Carreer  $carreer
+     * @param  \App\Career  $carreer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Carreer $carreer)
+    public function destroy(Career $carreer)
     {
         //
     }
