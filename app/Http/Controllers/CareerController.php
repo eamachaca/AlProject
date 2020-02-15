@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Career;
 use Illuminate\Http\Request;
 
-class CarreerController extends Controller
+class CareerController extends Controller
 {
     /**
      * Display a listing of the resource.
