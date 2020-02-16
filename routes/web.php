@@ -88,3 +88,8 @@ Route::middleware(['auth'])->group(function(){
 
 
 } );
+//Route::get('/', 'CourseController@index')->name('welcome');
+
+//Route::post('/agregar' , 'CourseController@store')->name('store');
+
+Route::resource('course','CourseController');

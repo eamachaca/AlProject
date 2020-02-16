@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
+use App\Models\Course;
+use App\Models\Semester;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -14,7 +15,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        
+
+        $course=Course::paginate(4);
+        return view('course.index')->with(compact('course'));
     }
 
     /**
@@ -24,7 +28,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $array=Semester::all();
+        return view('course.create')->with(compact('array'));
     }
 
     /**
@@ -35,7 +40,20 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $courseAdd = new Course;
+        $request->validate([
+            'name' => 'required',
+            'acronym' => 'required',
+            'credit' => 'required',
+            'semester_id' => 'required'
+        ]);
+        
+        $courseAdd->name = $request->name;
+        $courseAdd->acronym = $request->acronym;
+        $courseAdd->credit = $request->credit;
+        $courseAdd->semester_id = $request->semester_id;
+        $courseAdd->save();
+        return redirect()->route('course.index')->with('agregar' , 'EL curso se ha agregado correctamente');
     }
 
     /**
@@ -46,7 +64,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+       return view('course.show', compact('course'));
     }
 
     /**
@@ -56,8 +74,9 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Course $course)
-    {
-        //
+    {   
+        $array=Semester::all();
+        return view('course.edit', compact('course','array'));
     }
 
     /**
@@ -69,7 +88,12 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $course->name = $request->name;
+        $course->acronym = $request->acronym;
+        $course->credit = $request->credit;
+        $course->semester_id = $request->semester_id;
+        $course->save();
+        return redirect()->route('course.index')->with('update' , 'EL curso se ha modificado correctamente');
     }
 
     /**
@@ -80,6 +104,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return back()->with('eliminar','La materia se elimino correctamente');
     }
 }
