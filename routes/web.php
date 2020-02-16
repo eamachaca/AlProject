@@ -14,6 +14,10 @@ Route::resource('tecno','PortalController');
 
 Route::get('/','HomeController@index')->name('home');
 
+Route::get('portal/achievement/{id}','HomeController@showAchievement')->name('home_achievement');
+Route::get('portal/career/{id}','HomeController@showCareer')->name('home_career');
+Route::get('portal/study_plan/{id}','HomeController@showStudyPlan')->name('home_study');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function(){
