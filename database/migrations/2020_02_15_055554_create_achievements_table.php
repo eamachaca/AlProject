@@ -18,7 +18,7 @@ class CreateAchievementsTable extends Migration
             $table->string('title');
             $table->string('area');
             $table->string('content');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->date('date');
             $table->unsignedInteger('portal_id');
             $table->timestamps();
