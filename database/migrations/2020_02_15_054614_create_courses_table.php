@@ -19,7 +19,6 @@ class CreateCoursesTable extends Migration
             $table->string('acronym');
             $table->smallInteger('credit');
             $table->unsignedInteger('semester_id');
-            $table->unsignedInteger('studio_plan_id');
             $table->timestamps();
         });
     }

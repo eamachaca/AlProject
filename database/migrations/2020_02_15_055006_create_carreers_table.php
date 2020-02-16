@@ -17,9 +17,9 @@ class CreateCarreersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('acronym');
-            $table->string('mission');
-            $table->string('vision');
-            $table->string('welcome');
+            $table->text('mission');
+            $table->text('vision');
+            $table->text('welcome');
             $table->string('director');
             $table->unsignedInteger('portal_id');
             $table->timestamps();
