@@ -26,34 +26,9 @@
                          data-delay="3000"
                          data-navigation="true">
 
-                        <div class="item">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/single-01.jpg" alt="..."  height="700" width="800"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-yellow">Lifestyle</span><span class="news-cat bg-green">Technology</span>
-                                    <h5><a href="news-single.html">Why tech accelerators may soon be as irrelevant as an MBA</a></h5>
-                                    <span class="news-meta">Dec 02 - 2016</span>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div>
-                        <div class="item">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/single-02.jpg" alt="..."  height="700" width="800"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-yellow">Lifestyle</span><span class="news-cat bg-green">Technology</span>
-                                    <h5><a href="news-single.html">Why tech accelerators may soon be as irrelevant as an MBA</a></h5>
-                                    <span class="news-meta">Dec 02 - 2016</span>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div>
-                    </div><!-- carousel -->
-                </div><!-- Column -->
-            </div><!-- Row -->
-            <!-- bienvenida  -->
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
             <div class="col-md-6 col-eq-height pad-60">
                 <!-- Title -->
@@ -153,88 +128,32 @@
             </div><!-- Row -->
         </div><!-- Container -->
     </section><!-- Section -->
+        <style>
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        
+                
+            <div class="content">
+                <div class="title">
+                    Laravel 2
+                </div>
 
-    <!--Noticia  de la Ficct  -->
+                 <div class="container">
+                    @yield('content')
+                 </div>
+                    
+                    
+                
 
-    <section class="parallax-bg hero">
-        <div class="container">
-            <h2>Noticias</h2>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="row">
-                        <!-- Item Begins -->
-                        <div class="col-sm-12">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/lg-4.jpg" alt="..."  height="700" width="800"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-yellow">Lifestyle</span><span class="news-cat bg-green">Technology</span>
-                                    <h5><a href="news-single.html">Why tech accelerators may soon be as irrelevant as an MBA</a></h5>
-                                    <span class="news-meta">Dec 02 - 2016</span>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                    </div><!-- Row -->
-                </div><!-- Column -->
-                <div class="col-sm-6">
-                    <div class="row">
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/2.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-yellow">Lifestyle</span>
-                                    <h6><a href="news-single.html">Artist brings air of distinction to Delafield apartment</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/3.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-orange">Health</span><span class="news-cat bg-green">Lifestyle</span>
-                                    <h6><a href="news-single.html">HTC Nexus 8 with 64-bit processor, 4GB of RAM and 8MP...</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                    </div><!-- Row -->
-                    <div class="row margin-top-26">
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/4.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-color">Lifestyle</span>
-                                    <h6><a href="news-single.html">What Do I Need To Make It In Business?</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/5.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-green">Lifestyle</span>
-                                    <h6><a href="news-single.html">Whitewater Rafting Day Trip from New York in the East</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                    </div><!-- Row -->
-                </div><!-- Container -->
-            </div><!-- Row -->
-        </div><!-- Container -->
-    </section><!-- Section -->
-
-
-</div><!-- Page Main -->
-@endsection
+                
+            </div>
+        
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    </body>
+</html>
