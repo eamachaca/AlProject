@@ -18,8 +18,10 @@
     <div class="container">
         <div class="logo">
             <a href="{{route('home')}}">
-                <img alt="Universh" width="211" height="40" data-sticky-width="150" data-sticky-height="28"
-                     src="{{asset('images/default/logo3.png')}}">
+
+
+                <img alt="Universh" width="60" height="60" data-sticky-width="150" data-sticky-height="28" src="{{asset('images/default/logo3.png')}}">
+
             </a>
         </div>
         <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">

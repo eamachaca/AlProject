@@ -93,3 +93,4 @@ Route::middleware(['auth'])->group(function(){
 //Route::post('/agregar' , 'CourseController@store')->name('store');
 
 Route::resource('course','CourseController');
+Route::resource('rule','RuleController');

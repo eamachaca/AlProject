@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Rule;
+use App\Models\Rule;
+use App\Models\Portal;
 use Illuminate\Http\Request;
 
 class RuleController extends Controller
@@ -14,7 +15,8 @@ class RuleController extends Controller
      */
     public function index()
     {
-        //
+        $rule=Rule::paginate(5);
+        return view('rule.index')->with(compact('rule'));
     }
 
     /**
@@ -24,7 +26,8 @@ class RuleController extends Controller
      */
     public function create()
     {
-        //
+        $array=Portal::all();
+        return view('rule.create')->with(compact('array'));
     }
 
     /**
@@ -35,7 +38,18 @@ class RuleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ruleAdd = new Rule;
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'portal_id' => 'required'
+        ]);
+        
+        $ruleAdd->title = $request->title;
+        $ruleAdd->description = $request->description;
+        $ruleAdd->portal_id = $request->portal_id;
+        $ruleAdd->save();
+        return redirect()->route('rule.index')->with('agregar' , 'La norma se ha agregado correctamente');
     }
 
     /**
@@ -46,7 +60,7 @@ class RuleController extends Controller
      */
     public function show(Rule $rule)
     {
-        //
+        return view('rule.show', compact('rule'));
     }
 
     /**
@@ -57,7 +71,8 @@ class RuleController extends Controller
      */
     public function edit(Rule $rule)
     {
-        //
+        $array=Portal::all();
+        return view('rule.edit', compact('rule','array'));
     }
 
     /**
@@ -69,7 +84,11 @@ class RuleController extends Controller
      */
     public function update(Request $request, Rule $rule)
     {
-        //
+        $rule->title = $request->title;
+        $rule->description = $request->description;
+        $rule->portal_id = $request->portal_id;
+        $rule->save();
+        return redirect()->route('rule.index')->with('update' , 'La norma se ha modificado correctamente');
     }
 
     /**
@@ -80,6 +99,7 @@ class RuleController extends Controller
      */
     public function destroy(Rule $rule)
     {
-        //
+        $rule->delete();
+        return back()->with('eliminar','La norma se elimino correctamente');
     }
 }
