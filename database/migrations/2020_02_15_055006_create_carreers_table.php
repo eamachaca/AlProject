@@ -22,7 +22,7 @@ class CreateCarreersTable extends Migration
             $table->string('welcome');
             $table->string('director');
             $table->unsignedInteger('portal_id');
-            $table->unsignedInteger('portal_id');
+      
             $table->timestamps();
         });
     }
