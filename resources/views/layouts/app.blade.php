@@ -1,14 +1,18 @@
 @extends('layouts.structure')
 @section('body_structure')
-    @include('layouts.header')
+    @guest
+        @include('layouts.header_portal')
+    @else
+        @include('layouts.header')
+    @endguest
     <!-- Page Loader -->
     <div id="pageloader">
         <div class="loader-inner">
-            <img src="images/default/preloader.gif" alt="">
+            <img src="{{asset('images/default/preloader.gif')}}" alt="">
         </div>
     </div><!-- Page Loader -->
 <div id="app">
-    @if('info')
+    @if(session('info'))
         <div class ="container">
             <div class ="row">
                 <div class="col-md-8 col-md-offset-2">

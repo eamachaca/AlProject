@@ -1,4 +1,3 @@
-
 <!-- Footer -->
 <footer id="footer" class="footer-3">
     <!-- Main Footer -->
@@ -15,7 +14,8 @@
             <div class="row">
                 <!-- Copy Right Content -->
                 <div class="col-md-6">
-                    <p>&copy; Copyright 2020. All Rights Reserved. | By <a href="www.glorythemes.com" title="glorythemes">Glory Themes</a></p>
+                    <p>&copy; Copyright 2020. All Rights Reserved. | By <a href="www.facebook.com" title="DeIt0">TecnoWeb</a>
+                    </p>
                 </div><!-- Copy Right Content -->
                 <!-- Copy Right Content -->
             </div><!-- Footer Copyright -->
