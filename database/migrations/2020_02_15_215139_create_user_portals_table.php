@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrivilegesTable extends Migration
+class CreateUserPortalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePrivilegesTable extends Migration
      */
     public function up()
     {
-        Schema::create('privileges', function (Blueprint $table) {
+        Schema::create('user_portals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('action');
-            $table->unsignedInteger('group_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('portal_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePrivilegesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privileges');
+        Schema::dropIfExists('user_portals');
     }
 }
