@@ -1,18 +1,25 @@
-
+@if(empty($careers))
+    @php
+        $careers=\App\Models\Career::all();
+//corregir con tiempo xD
+    @endphp
+@endif
 <!-- barra de del menu -->
 <header id="header" class="default-header colored flat-menu">
     <div class="header-top">
         <div class="container">
 
             <ul class="social-icons color">
-                <li class="facebook"><a href="https://www.facebook.com/FICCTUAGRMOFICIAL/" target="_blank" title="Facebook">Facebook</a></li>
+                <li class="facebook"><a href="https://www.facebook.com/FICCTUAGRMOFICIAL/" target="_blank"
+                                        title="Facebook">Facebook</a></li>
             </ul>
         </div>
     </div>
     <div class="container">
         <div class="logo">
             <a href="{{route('home')}}">
-                <img alt="Universh" width="211" height="40" data-sticky-width="150" data-sticky-height="28" src="{{asset('images/default/logo3.png')}}">
+                <img alt="Universh" width="211" height="40" data-sticky-width="150" data-sticky-height="28"
+                     src="{{asset('images/default/logo3.png')}}">
             </a>
         </div>
         <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
@@ -26,7 +33,7 @@
                     <li class="dropdown mega-menu-item mega-menu-fullwidth mega-menu-halfwidth">
                         <a class="dropdown-toggle" href="#">
                             Portal
-                            <i class="fa fa-caret-down"></i>						</a>
+                            <i class="fa fa-caret-down"></i> </a>
                         <ul class="dropdown-menu">
 
                             <li>  @if (Route::has('login'))
@@ -47,9 +54,9 @@
                             <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="testimonial.html">Ing .Informatica</a></li>
-                            <li><a href="testimonial.html">Ing en Sistemas</a></li>
-                            <li><a href="testimonial.html">Ing. en Redes</a></li>
+                            @foreach($careers as $career)
+                                <li><a href="{{route('home_career',$career->id)}}">{{$career->name}}</a></li>
+                            @endforeach
                         </ul>
 
                     </li>

@@ -77,75 +77,22 @@
         <div class="container">
             <h2>Logros</h2>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="row">
                         <!-- Item Begins -->
-                        <div class="col-sm-12">
+                        @foreach($achievements as $achievement)
+                        <div class="col-sm-4 margin-top-26">
                             <!-- News Wrapper -->
                             <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/lg-4.jpg" alt="..."  height="700" width="800"></a>
+                                <a href="#"><img class="img-responsive" src="{{asset($achievement->image)}}" alt="..." height="320" width="417"></a>
                                 <!-- News Content -->
                                 <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-yellow">Lifestyle</span><span class="news-cat bg-green">Technology</span>
-                                    <h5><a href="news-single.html">Why tech accelerators may soon be as irrelevant as an MBA</a></h5>
-                                    <span class="news-meta">Dec 02 - 2016</span>
+                                    <span class="news-cat bg-success">{{$achievement->area}}</span>
+                                    <h5><a href="{{route('home_achievement',$achievement->id)}}">{{$achievement->title}}</a></h5>
                                 </div><!-- News Content -->
                             </div><!-- News Wrapper -->
                         </div><!-- Column -->
-                    </div><!-- Row -->
-                </div><!-- Column -->
-                <div class="col-sm-6">
-                    <div class="row">
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/2.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-yellow">Lifestyle</span>
-                                    <h6><a href="news-single.html">Artist brings air of distinction to Delafield apartment</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/3.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-orange">Health</span><span class="news-cat bg-green">Lifestyle</span>
-                                    <h6><a href="news-single.html">HTC Nexus 8 with 64-bit processor, 4GB of RAM and 8MP...</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                    </div><!-- Row -->
-                    <div class="row margin-top-26">
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/4.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-color">Lifestyle</span>
-                                    <h6><a href="news-single.html">What Do I Need To Make It In Business?</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
-                        <!-- Item Begins -->
-                        <div class="col-sm-6">
-                            <!-- News Wrapper -->
-                            <div class="news-wrap">
-                                <a href="#"><img class="img-responsive" src="images/news/5.jpg" alt="..." height="320" width="417"></a>
-                                <!-- News Content -->
-                                <div class="news-content">
-                                    <span class="news-cat bg-pink">Health</span><span class="news-cat bg-green">Lifestyle</span>
-                                    <h6><a href="news-single.html">Whitewater Rafting Day Trip from New York in the East</a></h6>
-                                </div><!-- News Content -->
-                            </div><!-- News Wrapper -->
-                        </div><!-- Column -->
+                        @endforeach
                     </div><!-- Row -->
                 </div><!-- Container -->
             </div><!-- Row -->
