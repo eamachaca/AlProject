@@ -1,115 +1,76 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-
-                 <!--BARRA DE NAVEGACION
-
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-
-                        @can('products.index')
-                        <li class= "nav-item">
-                            <a class="nav-link" href="{{ route('products.index')}}">Productos</a>
-                        </li>
-                        @endcan()
-
-                        @can('users.index')
-
-                         <li class= "nav-item">
-                            <a class="nav-link" href="{{ route('users.index')}}">Usuarios</a>
-                        </li>
-                        @endcan()
-                        
-                        @can('roles.index')
-                         <li class= "nav-item">
-                            <a class="nav-link" href="{{ route('roles.index')}}">Roles</a>
-                        </li>
-                        @endcan()
-                        
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        @if('info')
+@extends('layouts.structure')
+@section('body_structure')
+    @include('layouts.header')
+    <!-- Page Loader -->
+    <div id="pageloader">
+        <div class="loader-inner">
+            <img src="images/default/preloader.gif" alt="">
+        </div>
+    </div><!-- Page Loader -->
+<div id="app">
+    @if('info')
         <div class ="container">
             <div class ="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class ="alert alert-success">
                         {{ session('info') }}
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
-        @endif
-        @yield('content')
-    </div>
+    @endif
+    @yield('content')
+</div>
+    @include('layouts.footer')
+@endsection
+@section('head_structure')
+    @yield('css')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
-</html>
+    <link rel="stylesheet" href="{{asset('css/lib/univershicon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/lib/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('css/lib/prettyPhoto.css')}}">
+    <link rel="stylesheet" href="{{asset('css/lib/menu.css')}}">
+    <link rel="stylesheet" href="{{asset('css/lib/timeline.css')}}">
+
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{asset('css/theme.css')}}">
+    <link rel="stylesheet" href="{{asset('css/theme-responsive.css')}}">
+
+
+    <!--[if IE]>
+    <link rel="stylesheet" href="{{asset('css/ie.css')}}">
+    <![endif]-->
+
+    <!-- Skins CSS -->
+    <link rel="stylesheet" href="{{asset('css/skins/default.css')}}">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+@endsection
+@section('script_structure')
+    <link rel="stylesheet" href="{{asset('css/lib/animate.min.css')}}">
+    <script src="{{asset('js/lib/bootstrapValidator.min.js')}}"></script>
+    <script src="{{asset('js/lib/jquery.appear.js')}}"></script>
+    <script src="{{asset('js/lib/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('js/lib/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/lib/countdown.js')}}"></script>
+    <script src="{{asset('js/lib/counter.js')}}"></script>
+    <script src="{{asset('js/lib/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/lib/jquery.easypiechart.min.js')}}"></script>
+    <script src="{{asset('js/lib/jquery.mb.YTPlayer.min.js')}}"></script>
+    <script src="{{asset('js/lib/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{asset('js/lib/jquery.stellar.min.js')}}"></script>
+    <script src="{{asset('js/lib/menu.js')}}"></script>
+
+    <script src="{{asset('js/lib/modernizr.js')}}"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="{{asset('js/theme.js')}}"></script>
+
+    <!-- Theme Custom -->
+    <script src="{{asset('js/custom.js')}}"></script>
+    @yield('scripts')
+@endsection

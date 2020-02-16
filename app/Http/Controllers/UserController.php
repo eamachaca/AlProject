@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
 
@@ -20,7 +20,7 @@ class UserController extends Controller
         return view('users.index',compact('users'));
     }
 
-   
+
     /**
      * Display the specified resource.
      *
@@ -53,7 +53,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {   // actualice el usuario
          $user->update($request->all());
-         
+
         //actualice los roles
          $user->roles()->sync($request->get('roles'));
 
