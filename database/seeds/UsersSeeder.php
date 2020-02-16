@@ -1,6 +1,5 @@
 <?php
 
-use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +12,6 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 20)->create();
         Role::create([
             'name'	=> 'Admin',
             'slug'	=> 'admin',

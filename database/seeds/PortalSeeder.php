@@ -16,30 +16,17 @@ class PortalSeeder extends Seeder
         portal::truncate(); // para evitar duplicados 
 
         $portal = new Portal();
-        $portal->mission = "esta es la mision";
-        $portal->vision = "esta es la vision";
+        $portal->mission = "La Facultad de Ingeniería en Ciencias de la Computación y Telecomunicaciones es una unidad de gestión, organización y desarrollo de actividades académicas, investigación y extensión para la formación integral de profesionales en ciencias de la computación y telecomunicación para la creación, difusión y cultivo de las tecnologías de la información y comunicación en pre y postgrado para contribuir al logro del desarrollo humano sostenible.";
+        $portal->vision = "Para el año 2018, la Facultad de Ingeniería en Ciencias de la Computación, Redes y Telecomunicaciones, es reconocida por la calidad de gestión académica - administrativa, de sus programas formativos de pre y postgrado, por la generación de conocimiento científico y tecnológico pertinente y adecuado a los requerimientos del desarrollo científico y tecnológico a nivel nacional e internacional.";
         $portal->title="este es el titulo";
-        $portal->welcome="esta es la bienvenida";
+        $portal->welcome="Bienvenidos a la Página de la Facultad de Ingeniería de Ciencias de la Comunicación y Telecomunicaciones (F.I.C.C.T.) de la Universidad Autónoma Gabriel René Moreno (U.A.G.R.M.).
 
+        Esperamos que puedas encontrar toda la información y documentos de tu interés. Por este medio te estaremos haciendo conocer sobre las novedades y eventos académicos de la Facultad, así que ¡no dejes de visitarnos!.";
         $portal->save();
 
-        $portal = new Portal();
-        $portal->mission = "esta es la mision 2";
-        $portal->vision = "esta es la vision 2" ;
-        $portal->title="este es el titulo 2";
-        $portal->welcome="esta es la bienvenida 2";
-
-        $portal->save();
-
+        
             
-        $achievement = new Achievement();
-        $achievement->title = "titulo1";
-        $achievement->area ="academica";
-        $achievement->content="contenido full";
-        $achievement->image="imagen_link";
-        $achievement->date=Carbon::now();
-        $achievement->portal_id=1;
-        $achievement->save();
+       
     }
 }
 
