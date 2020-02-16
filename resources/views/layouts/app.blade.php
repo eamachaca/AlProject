@@ -8,7 +8,7 @@
     <!-- Page Loader -->
     <div id="pageloader">
         <div class="loader-inner">
-            <img src="images/default/preloader.gif" alt="">
+            <img src="{{asset('images/default/preloader.gif')}}" alt="">
         </div>
     </div><!-- Page Loader -->
 <div id="app">
