@@ -15,5 +15,12 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersSeeder::class);
         $this->call(PortalSeeder::class);
         $this->call(NewSeeder::class);
+        $this->call(AchievementSeeder::class);
+        $this->call(RuleSeeder::class);
+        $this->call(RegulationSeeder::class);
+        $this->call(CarreerSeeder::class);
+        $this->call(SemesterSeeder::class);
+        $this->call(CourseSeeder::class);
+        $this->call(StudioPlanSeeder::class);
     }
 }
