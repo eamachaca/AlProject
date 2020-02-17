@@ -48,7 +48,7 @@
                             </div>
 
 
-                            <button type="submit" class="btn btn-success btn-block">Agregar Norma</button>
+                            <button type="submit" class="btn btn-success btn-block">Agregar Normas</button>
                         </form>
                     </div>
 
